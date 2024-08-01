@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- SCROLL TO TOP -->
+   <button onclick="scrollToTop()" id="scroll-to-top" class="fixed end-4 bottom-5 z-10 animate-bounce hidden transform duration-1000">
+    <img src="./assets/img/page-top.png" alt="">
+   </button>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="antialiased lg:pt-10">
+        <div class="w-full text-white bg-gray-900 lg:bg-transparent dark-mode:text-gray-200 dark-mode:bg-gray-800">
+          <div x-data="{ open: true }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+            <div class="flex flex-row items-center justify-between p-4">
+              <a href="#" class="text-lg font-semibold tracking-widest text-white uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Portfolio</a>
+              <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                  <path x-show="open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                  <path x-show="!open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+              </button>
+            </div>
+            <nav :class="{'flex': !open, 'hidden': open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row font-montserrat">
+              <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white transition duration-200  dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Chi sono</a>
+              <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white transition duration-200 dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#skills">Skills</a>
+              <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white transition duration-200 dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#project">Progetti</a>
+              <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent lg:bg-gray-200 lg:text-gray-900 rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Contattami</a> 
+            </nav>
+          </div>
+        </div>
+      </div>
+        <!-- Desktop -->
+        <div class="container mx-auto h-screen hidden lg:flex items-center">
+            <div class="grid lg:grid-cols-2 grid-row-1 items-center lg:mb-8">
+                <div class="justify-center items-center font-title custom_title">
+                    <p class="me-auto myname">Ciao, mi chiamo</p>
+                    <h1 class="border-b-4 border-e-4 border-[#fe5100]">Pasquale Abat</h1>
+                    <p class="mt-1">Sono un Web Developer || Full-Stack</p>
+                </div>
+                <div class="hidden lg:flex lg:justify-center lg:ms-60">
+                    <img src="./assets/img/tossico.jpg" alt="" class="rounded-full border-4 h-[400px]">
+                </div>
+                <div class="flex gap-5 ms-5">
+                  <a href="https://github.com/1Noxil" target="_blank">
+                    <div class="group relative">
+                      <button>
+                      <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" class="w-8 hover:scale-125 duration-200 hover:stroke-blue-500"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                      </button>
+                      <span class="absolute -top-14 left-[50%] -translate-x-[50%] 
+                      z-20 origin-left scale-0 px-3 rounded-lg border 
+                      border-gray-300 bg-white py-2 text-sm font-bold
+                      shadow-md transition-all duration-300 ease-in-out 
+                      group-hover:scale-100">GitHub<span>
+                    </span></span></div>
+                  </a>
+                  <a href="https://www.linkedin.com/in/pasquale-abate-web-developer/" target="_blank">
+                    <div class="group relative">
+                      <button>
+                      <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" class="w-8 hover:scale-125 duration-200 hover:fill-blue-500"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                      </button>
+                      <span class="absolute -top-14 left-[50%] -translate-x-[50%] 
+                      z-20 origin-left scale-0 px-3 rounded-lg border 
+                      border-gray-300 bg-white py-2 text-sm font-bold
+                      shadow-md transition-all duration-300 ease-in-out 
+                      group-hover:scale-100">Linkedin<span>
+                    </span></span></div>
+                  </a>
+                </div>
+            </div>
+        </div>
+        <!-- MOBILE -->
+        <div class="h-screen lg:hidden overflow-hidden relative">
+          <div class="m-12">
+            <img src="./assets/img/tossico.jpg" alt="" class="rounded-full border-4 border-white h-[16rem]">
+          </div>
+          <div class="bg-black h-3/4 -skew-y-12 flex flex-col justify-center items-center">
+            <div class="ms-auto skew-y-12 me-2">
+              <a href="https://github.com/1Noxil" target="_blank">
+                <div class="group mb-2">
+                  <button>
+                  <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" class="w-8 hover:scale-125 duration-200 hover:stroke-blue-500 stroke-white "><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  </button>
+                </span></span></div>
+              </a>
+              <a href="https://www.linkedin.com/in/pasquale-abate-web-developer/" target="_blank">
+                <div class="group">
+                  <button>
+                  <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" class="w-8 hover:scale-125 duration-200 hover:fill-blue-500 fill-white"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                  </button>
+                </span></span></div>
+              </a>
+            </div>
+            <div class=" font-title font-bold text-white skew-y-12 mb-28">
+              <p class="me-auto text-[30px]">Ciao, mi chiamo</p>
+              <h1 class="border-b-4 border-e-4 border-[#fe5100] text-[40px]">Pasquale Abate</h1>
+              <p class="mt-1 text-[20px]">Sono un Web Developer || Full-Stack</p>
+            </div>
+          </div>
+        </div> 
+          
+        
+    </section>
+    <!-- Separatore -->
+    <div class="flex justify-center my-40">
+      <img src="./assets/img/separatore.png" alt="">
+    </div>
+    <!-- --------- -->
+    <!-- SKILLS -->
+     <section id="skills" class="my-20 lg:w-1/2 lg:mx-auto px-5 lg:px-0 relative">
+      <img src="./assets/img/icecream.png" alt="" class="absolute right-4 bottom-[74rem] lg:bottom-[59rem] lg:right-[14rem] -z-10">
+        <div class="grid grid-cols-2 lg:grid-cols-4 font-montserrat gap-8 items-center  justify-center">
+          <!-- TITLE -->
+          <div class="col-span-2 lg:col-span-4 text-center flex mx-auto">
+            <h4 class="border-4 border-black py-4 px-16 lg:py-8 lg:px-32 font-bold text-[30px] spacing">SKILLS</h4>
+          </div>
+          <!-- Using Now -->
+          <div class="col-span-2 lg:col-span-4 text-center flex mt-6">
+            <h4 class="font-bold text-[30px] spacing">Che utilizzo:</h4>
+          </div>
+          <img src="./assets/img/skills/html.png" alt="">
+          <img src="./assets/img/skills/css.png" alt="">
+          <img src="./assets/img/skills/js.png" alt="">
+          <img src="./assets/img/skills/bootstrap.png" alt="">
+          <img src="./assets/img/skills/php.png" alt="">
+          <img src="./assets/img/skills/laravel.png" alt="">
+          <img src="./assets/img/skills/git.png" alt="">
+          <div class="col-span-2 lg:col-span-4 text-center flex mt-6">
+            <h4 class="font-bold text-[30px] spacing">Che sto studiando:</h4>
+          </div>
+          <img src="./assets/img/skills/tailwind.png" alt="">
+
+
+          
+        </div>
+     </section>
+         <!-- Separatore -->
+    <div class="flex justify-center my-40">
+      <img src="./assets/img/separatore.png" alt="">
+    </div>
+    <!-- --------- -->
+     <!-- Progetti -->
+     <section id="project" class="my-20  lg:mx-auto px-5 py-8 lg:px-0 bg-gray-900">
+      <div class="grid grid-cols-1 lg:grid-cols-2 font-montserrat gap-8 items-center justify-center">
+        <!-- TITLE -->
+        <div class="col-span-1 lg:col-span-2 text-center flex mx-auto mb-8">
+          <h4 class="border-4 border-gray-100 text-gray-100 py-4 px-10 lg:py-8 lg:px-32 font-bold text-[30px] spacing">PROGETTI</h4>
+        </div>
+        <!-- POROJECT -->
+        <a href="" class="lg:columns-2 col-span-2 hover:bg-gray-800 hover:shadow-2xl hover:scale-105 text-white transform duration-500 py-12">
+          <div class="flex justify-center">
+            <img src="./assets/img/project/blog.png" alt="" class="h-[300px] w-[500px] border-2 border-black">
+          </div>
+          <div class="mt-4">
+            <h4 class="font-bold mb-12 text-2xl">Blog-Laravel</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta dignissimos cum, optio illo doloremque repellendus cumque libero minus, facilis, porro cupiditate rem quam inventore nulla consectetur laboriosam ab id natus!</p>
+            <p class="text-gray-500 mt-12">05/2024</p>
+          </div>
+        </a>
+        <a href="" class="lg:columns-2 col-span-2 hover:bg-gray-800 hover:shadow-2xl hover:scale-105 text-white transform duration-500 py-12">
+          <div class="flex justify-center">
+            <img src="./assets/img/project/presto.it.png" alt="" class="h-[300px] w-[500px] border-2 border-black">
+          </div>
+          <div class="mt-4">
+            <h4 class="font-bold mb-12 text-2xl">Presto.it</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta dignissimos cum, optio illo doloremque repellendus cumque libero minus, facilis, porro cupiditate rem quam inventore nulla consectetur laboriosam ab id natus!</p>
+            <p class="text-gray-500 mt-12">03/2024</p>
+          </div>
+        </a>
+         <a href="" class="lg:columns-2 col-span-2 hover:bg-gray-800 hover:shadow-2xl hover:scale-105 text-white transform duration-500 py-12">
+           <div class="flex justify-center">
+             <img src="./assets/img/project/agenzia-viaggi.png" alt="" class="h-[300px] w-[500px] border-2 border-black">
+           </div>
+           <div class="mt-4">
+             <h4 class="font-bold mb-12 text-2xl">Agenzia di viaggi</h4>
+             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta dignissimos cum, optio illo doloremque repellendus cumque libero minus, facilis, porro cupiditate rem quam inventore nulla consectetur laboriosam ab id natus!</p>
+             <p class="text-gray-500 mt-12">02/2024</p>
+           </div>
+         </a>
+      </div>
+   </section>
+   <!-- Contact -->
+   <section class="my-20  lg:mx-auto px-5 py-8 lg:px-0 max-w-sceen">
+    <div class="grid grid-cols-1 font-montserrat gap-8 items-center justify-center">
+       <!-- TITLE -->
+        <div class="col-span-1  text-center flex mx-auto">
+          <h4 class="border-4 border-black py-4 px-5 lg:py-8 lg:px-28 font-bold text-[30px] spacing">CONTATTAMI</h4>
+        </div>
+        <div class="col-span-1  text-center flex  w-1/2 mx-auto">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, pariatur. Aspernatur praesentium saepe quod corporis, repudiandae, et recusandae voluptate mollitia ipsum aliquid animi laboriosam in quidem beatae tenetur, eaque aliquam.</p>
+        </div>
+        <div class="flex justify-center">
+          <img src="./assets/img/separatore.png" alt="">
+        </div>
+        <div class="mx-auto my-8">
+          <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-12">
+            <!-- Replace with your Access Key -->
+            <input type="hidden" name="access_key" required value="d9e470c5-9f3a-4413-99ec-95dab6ea193c">
+            <input type="text" name="name" required class="bg-transparent border-b-4 border-s-4 border-black
+            active:border-b-4 active:border-s-4 active:border-black py-4 px-20" placeholder="Inserisci il Nome">
+            <input type="email" name="email" required class="bg-transparent border-b-4 border-s-4 border-black
+            active:border-b-4 active:border-s-4 active:border-black py-4 px-20" placeholder="Inserisci la tua Email">
+            <input name="Phone Number" required type="number" class="bg-transparent border-b-4 border-s-4 border-black
+            active:border-b-4 active:border-s-4 active:border-black py-4 px-20" placeholder="Inserisci numero di telefono">
+            <textarea name="message" required class="bg-transparent border-b-4 border-s-4 border-black
+            active:border-b-4 active:border-s-4 active:border-black h-40 p-2" placeholder="Inserisci la tua Email">
+            </textarea>
+            <div class="flex justify-center">
+              <button type="submit" class="border-4 border-black py-4 px-16 lg:py-8 lg:px-14 font-bold text-[20px] spacing">CONTATTAMI</button>
+            </div>
+          </form>
+        </div>
+        
+  
+
+    </div>
+   </section>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root{
+    --gray: #cad2c7;
+    --black: #000403;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.font-title{
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+  }
+.font-montserrat{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+.spacing{
+    letter-spacing: 0.70rem;
+}
+
+body{
+    background-color: var(--gray);
+}
+/* Hero-Section */
+
+@media (min-width:1023px){
+    .hero-section{
+       background-image: url(./assets/img/background.png);
+       background-position: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+   } 
+}
+
+.myname{
+    border-right: solid 3px rgba(0,255,0,.75);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: animated-text 4s steps(29,end) 1s 1 normal both,
+             animated-cursor 600ms steps(29,end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 310px;}
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor{
+  from{border-right-color: #fe5100;}
+  to{border-right-color: transparent;}
+}
+
+
+/* Navbar */
+.contact-me{
+    background-color: var(--gray);
+    color: black;
+}
+.custom_title>h1::after{
+    content: 'e';
+    animation: lamp 0.4s linear 2,
+                lamp 0.6s linear 1s 2,
+                lamp 1s linear 2s forwards;
+}
+
+@keyframes lamp{
+    0%{
+        color:black;
+        text-shadow: none;
+    }
+    100%{
+        color: #fe5100;
+/*         text-shadow: 0 0 10px #a2e635e1,
+        -1px -1px 0 #a2e635e1,  
+        1px -1px 0 #a2e635e1,
+       -1px  1px 0 #a2e635e1,
+        1px  1px 0 #a3e635; */
+    }
+    
+}
+
+
+.custom_title>p:first-child{
+    font-size: 40px;
+    font-weight: bold;
+}
+.custom_title>h1{
+    font-size: 80px;
+    font-weight: bold;
+}
+.custom_title>p:last-child{
+    font-size: 25px;
+    color: #909090;
+}
+
+input:focus,textarea:focus{
+    /* Rimuove ombre e outline */
+    box-shadow: none;
+    outline: none;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
