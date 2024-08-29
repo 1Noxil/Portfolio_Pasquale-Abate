@@ -5,10 +5,8 @@ document.querySelector('#scroll-to-top');
 // Show button when user scrolls down
 window.addEventListener('scroll', () => {
     if (window.scrollY > 150) {
-    console.log('cazzi');
   scrollToTopButton.classList.remove('hidden');
 } else {
-    console.log('else');
   scrollToTopButton.classList.add('hidden');
 }
 });
@@ -21,16 +19,15 @@ window.scrollTo({
 });
 }              
 /* Svuota campi input */
-let input = document.querySelectorAll('input');
-input.forEach(element => {
-    element.value = '';
-    console.log('cazzi');
-});
-/* Svuota textarea */
-let textarea = document.querySelector('textarea');
-textarea.value = '' ;
+function clear(){
+  let input = document.querySelectorAll('input');
+  let textarea = document.querySelector('textarea');
+  input.forEach(element => {
+      element.value = '';
+  });
+  textarea.value = '' ;
 
-/* web3Form */
+};
 
 document.getElementById('contact-form').addEventListener('submit', async function(event) {
   event.preventDefault();
@@ -54,6 +51,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       const result = await response.json();
       if (result.success) {
           console.log(result);
+          clear();
           // Puoi aggiungere qui un messaggio di successo per l'utente
       } else {
           console.error(result);
